@@ -50,7 +50,7 @@ public class AddBookController {
 		
 		Book book = new Book(name,author);
 		ResponseEntity<Book> b = restTemplate.postForEntity("http://localhost:8090/addBook", book, Book.class);
-		System.out.println("it's working");
+		System.out.println(b.getBody());
 		try {
 			ArrayList<Book> books=  api.getBooks();
 			System.out.println(books);
